@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height:100vh;
+  background-color:floralwhite;
+  width: 100vw;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.task-description-cell {
+  /* Set a fixed width or use max-width to control the cell width */
+  /* For example, use max-width to make the cell responsive and wrap the content */
+  max-width: 200px; /* Adjust the width as per your requirement */
+}
+
+/* Styles for the content inside the task description cell to enable wrapping */
+.task-description-content {
+  word-wrap: break-word; /* Ensures words wrap to the next line if they exceed the width */
+}
