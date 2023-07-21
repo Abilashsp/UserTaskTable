@@ -1,7 +1,8 @@
 import action from "./Action";
 
 const initialvalue={
-    taskList:[]
+    taskList:[],
+    
 }
 
 export default function reducer(state=initialvalue,action){
@@ -71,6 +72,7 @@ export default function reducer(state=initialvalue,action){
                 
                
               }
+              
                
                
             

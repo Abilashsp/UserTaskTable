@@ -1,7 +1,9 @@
-import { createStore } from "@reduxjs/toolkit";
+
+import { combineReducers } from "redux";
 import reducer from "./reducer";
 
- const store=createStore(reducer);
+
+ const rootReducer=combineReducers({TaskDescriptionDetail:reducer});
 
 
- export default store;
+ export default  rootReducer;

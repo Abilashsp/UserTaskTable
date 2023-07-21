@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/index";
 import { Provider } from 'react-redux';
 import Homepage from './Homepage';
 import TaskList from './TaskList';
+import store from "./LocalStore/LocalStorage"
+
 
 
 
