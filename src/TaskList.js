@@ -4,6 +4,8 @@ import { RiDeleteBin7Fill } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { format } from "date-fns";
+
 
 export default function TaskList({ handleEclick }) {
   const dispatch = useDispatch();
@@ -58,6 +60,10 @@ export default function TaskList({ handleEclick }) {
                 Status
               </th>
               <th scope="col" className="px-6 py-3 text-white">
+                 Time
+              </th>
+            
+              <th scope="col" className="px-6 py-3 text-white">
                 Edit
               </th>
               <th scope="col" className="px-6 py-3 text-white">
@@ -66,7 +72,7 @@ export default function TaskList({ handleEclick }) {
             </tr>
           </thead>
 
-          <tbody className="text-lg overflow-scroll">
+          <tbody className="text-lg overflow-y-auto ">
             {tasks &&
               tasks.map((task, index) => {
                 const isCompleted = task.completed;
@@ -126,19 +132,30 @@ export default function TaskList({ handleEclick }) {
                     >
                       {task.TaskDescription}
                     </td>
+                    
                     <td>
             <div>
               {isCompleted ? (
-                <span className="bg-green-500 p-3 mt-3 rounded-xl text-white decreaseOpacity">
+                <span className="bg-green-500 p-2 mt-3 rounded-xl text-white decreaseOpacity">
                   Completed
                 </span>
               ) : (
-                <span className="bg-orange-600 p-3 mt-3 rounded-xl text-white ">
+                <span className="bg-orange-600 p-2 mt-3 rounded-xl text-white ">
                   In progress
                 </span>
               )}
             </div>
           </td>
+          <td
+                      className={`px-6 py-4 task-description-cell task-description-content first-letter:uppercase height  ${
+                        isCompleted ? "decreaseOpacity" : ""
+                      }`}
+                      id={index}
+                    >
+                      {new Date(task.timestamp).toLocaleString()}
+                    
+                    </td>
+                  
                     <td
                       className={`px-6 py-4 text-white ${
                         isCompleted ? "decreaseOpacity" : ""

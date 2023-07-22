@@ -97,9 +97,9 @@ export default function Homepage() {
                         ? selectlist
                         : {
                             completed: false,
-                            name: "",
-                            TaskName: "",
-                            TaskDescription: "",
+                            name: " Abilash",
+                            TaskName: "TodoList",
+                            TaskDescription: "jadbfadndvkndvnnvnjjnbjsnfjncjnvjsfnvjbjfbfsfbfsbsfb",
                           }
                     }
                     
@@ -191,7 +191,7 @@ export default function Homepage() {
           </div>
         </Dialog>
       </Transition>
-      <TaskList handleEclick={handleEclick} />
+      <TaskList handleEclick={handleEclick} editbar={editbar}/>
     </div>
     </div>
   );

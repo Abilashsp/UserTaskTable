@@ -11,7 +11,12 @@ export default function reducer(state=initialvalue,action){
     switch(action.type){
 
        case "ADDLIST": {
-                const updatedTaskList = [...state.taskList, action.data];
+        const updatedTask = {
+          ...action.data,
+          timestamp: new Date().toISOString(),
+          
+        };
+                const updatedTaskList = [...state.taskList,  updatedTask];
                 
                 return {
                   ...state,
@@ -40,6 +45,7 @@ export default function reducer(state=initialvalue,action){
                     name: action.updatedTask.name,
                     TaskName: action.updatedTask.TaskName,
                     TaskDescription: action.updatedTask.TaskDescription,
+                    timestamp: new Date().toISOString(),
                   };
                 }
                 return task;
